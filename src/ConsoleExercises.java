@@ -59,16 +59,16 @@ public class ConsoleExercises {
          */
 
         System.out.print("Please enter the length: ");
-        int length = scanner.nextInt();
+        String length = scanner.next();
         System.out.print("Please enter the width: ");
-        int width = scanner.nextInt();
+        String width = scanner.next();
 
-        int area = length * width;
-        int perimeter = 2 * (length + width);
+        int area = Integer.parseInt(length) * Integer.parseInt(width);
+        int perimeter = 2 * (Integer.parseInt(length) + Integer.parseInt(width));
 
         System.out.println();
 
-        System.out.println("The area of the classroom is " + area + " , and the perimeter is " + perimeter);
+        System.out.printf("The area of the classroom is %d, and the perimeter is %d", area, perimeter);
 
 
 

@@ -17,10 +17,18 @@ public class ControlFlowExercises {
          *
          * 5 6 7 8 9 10 11 12 13 14 15
          **/
-        int i = 5;
-        while(i <= 15)
+//        int i = 5;
+//        while(i <= 15)
+//        {
+//            System.out.println(i++);
+//        }
+//
+//        System.out.println();
+
+        //refactoring the while loop above with a for loop
+        for(int x = 5; x <= 15; x++)
         {
-            System.out.println(i++);
+            System.out.println(x);
         }
 
         System.out.println();
@@ -49,24 +57,37 @@ public class ControlFlowExercises {
 //            System.out.println(start -= 5);
 //
 //        }while(start >= -5);
+        for(int x = 100; x >= -5; x--)
+        {
+            System.out.println(x);
+        }
 
         System.out.println();
 
+//        long num = 2;
+//
+//        do
+//        {
+//            System.out.println(num);
+//
+//            num = num * num;
+//
+//        }while(num <= 1000000);
+
         long num = 2;
 
-//        int square = 0;
-
-        do
+        for(long x = 0; x <= 100000; x++)
         {
-
-            System.out.println(num);
-
-            num = num * num;
-
-        }while(num <= 1000000);
-
-
-
-
+            if(num == 65536)
+            {
+                System.out.println(num);
+                break;
+            }
+            else
+            {
+                System.out.println(num);
+            }
+            num *= num;
+        }
     }
 }

@@ -1,4 +1,4 @@
-import java.lang.Math;
+import java.util.Scanner;
 
 public class ControlFlowExercises {
 
@@ -145,6 +145,19 @@ public class ControlFlowExercises {
          * 4      | 16      | 64
          * 5      | 25      | 125
           **/
+        System.out.println();
+
+        Scanner getNumber = new Scanner(System.in);
+
+        System.out.print("What number would you like to go upt to? ");
+        int theNumber = getNumber.nextInt();
+
+        System.out.println("number | squared | cubed");
+        System.out.println("------ | ------- | -----");
+        for(int x = 1; x <= theNumber; x++)
+        {
+            System.out.printf("%d      | %d       | %d    %n", x, x * x, (x * x) * x);
+        }
 
          /** Convert given number grades into letter grades.
          *

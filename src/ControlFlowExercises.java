@@ -173,6 +173,35 @@ public class ControlFlowExercises {
          * C : 79 - 67
          * D : 66 - 60
          * F : 59 - 0
+          **/
+        System.out.println();
+
+        String continueForward = "";
+        do
+        {
+            Scanner theGrade = new Scanner(System.in);
+            System.out.print("Please enter a numerical grade from 0 to 100: ");
+            int grade = theGrade.nextInt();
+
+            if(grade >= 88)
+                System.out.println("The student got an A");
+            else if(grade >= 80 && grade <= 87)
+                System.out.println("The student got a B");
+            else if(grade <= 79 && grade >= 67)
+                System.out.println("The student got a C");
+            else if(grade <= 66 && grade >= 60 )
+                System.out.println("The student got a D");
+            else
+                System.out.println("The student got a F");
+
+            System.out.println();
+            Scanner proceed = new Scanner(System.in);
+            System.out.print("Do you want to continue y / n?: ");
+            continueForward = proceed.next();
+
+        }while(continueForward.equals("y"));
+
+         /**
          * Bonus
          *
          * Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+).

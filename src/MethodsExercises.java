@@ -18,10 +18,10 @@ public class MethodsExercises
 //        int userInput = getInteger(1, 10);
         System.out.println();
         Scanner scanner = new Scanner(System.in);
-//        //prompt the user to enter an integer from 1 to 10
-//        System.out.print("Please enter a number ranging from 1 to 10: ");
-//        long factNumber = scanner.nextLong();
-//        factorial(factNumber);
+        //prompt the user to enter an integer from 1 to 10
+        System.out.print("Please enter a number ranging from 1 to 10: ");
+        long factNumber = scanner.nextLong();
+        factorial(factNumber);
 
         rollDice();
 

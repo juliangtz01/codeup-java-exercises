@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class MethodsExercises
@@ -12,18 +13,17 @@ public class MethodsExercises
         System.out.printf("Multiplying %d and %d will result in %d.%n",num1,num2,multiply(num1, num2));
         System.out.printf("Dividing %d and %d will result in %d.%n",num1, num2,divide(num1, num2));
         System.out.printf("When dividing %d and %d, the remainder is %d.%n", num1, num2, remainder(num1, num2));
-        System.out.println();
-        System.out.print("Enter a number between 1 and 10: ");
-        int userInput = getInteger(1, 10);
+//        System.out.println();
+//        System.out.print("Enter a number between 1 and 10: ");
+//        int userInput = getInteger(1, 10);
         System.out.println();
         Scanner scanner = new Scanner(System.in);
-        //prompt the user to enter an integer from 1 to 10
-        System.out.print("Please enter a number ranging from 1 to 10: ");
-        long factNumber = scanner.nextLong();
-        factorial(factNumber);
+//        //prompt the user to enter an integer from 1 to 10
+//        System.out.print("Please enter a number ranging from 1 to 10: ");
+//        long factNumber = scanner.nextLong();
+//        factorial(factNumber);
 
-
-
+        rollDice();
 
     }
 
@@ -133,6 +133,38 @@ public class MethodsExercises
             }
 
         }while(answer.equals("y"));
+    }
+
+    public static void rollDice()
+    {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        String wishToContinue = "";
+        do
+        {
+            System.out.print("Enter the number of sides you wish the pair of dice to have: ");
+            int diceNum = scanner.nextInt();
+
+            int num1 = 1 + random.nextInt(diceNum);
+            int num2 = 1 + random.nextInt(diceNum);
+
+            System.out.println();
+
+            System.out.printf("The first roll, you got %d%n",num1);
+            System.out.printf("The scond roll, you got %d%n", num2);
+            System.out.print("Do you wish to continue y/n? ");
+            wishToContinue = scanner.next();
+
+            if(!wishToContinue.equals("y") && !wishToContinue.equals("n"))
+            {
+                System.out.println("You entered an invalid entry, please try again!!!\n");
+
+                System.out.print("Do you wish to continue y/n? ");
+                wishToContinue = scanner.next();
+            }
+
+        }while(wishToContinue.equals("y"));
+
     }
 
 

@@ -15,6 +15,14 @@ public class MethodsExercises
         System.out.println();
         System.out.print("Enter a number between 1 and 10: ");
         int userInput = getInteger(1, 10);
+        System.out.println();
+        Scanner scanner = new Scanner(System.in);
+        //prompt the user to enter an integer from 1 to 10
+        System.out.print("Please enter a number ranging from 1 to 10: ");
+        long factNumber = scanner.nextLong();
+        factorial(factNumber);
+
+
 
 
     }
@@ -66,6 +74,65 @@ public class MethodsExercises
             getInteger(1, 10);
             return 0;
         }
+    }
+
+    public static void factorial(long num)
+    {
+        Scanner scanner = new Scanner(System.in);
+        boolean continueFactorial = false;
+        String answer = "";
+
+
+        do
+        {
+            if(num >= 1 && num <= 10)
+            {
+                long facNum = 0;
+                long multiplyNums = 1;
+
+                for(long x = num; x <= num; x++)
+                {
+                    System.out.printf("%d! = 1 ",num);
+
+                    for(long y = 2; y <= num; y++)
+                    {
+                        System.out.printf("x %d ",y);
+                        multiplyNums *= y;
+                    }
+                    System.out.printf("  = %d%n",multiplyNums);
+                }
+                System.out.print("Do you wish to continue y/n: ");
+                answer = scanner.next();
+                if(!answer.equals("y") && !answer.equals("n"))
+                {
+                    System.out.println("You did not make a valid entry, please try again!!");
+                    System.out.print("Do you wish to continue y/n: ");
+                    answer = scanner.next();
+                }
+                else if(answer.equals("y"))
+                {
+                    System.out.print("Please enter a number ranging from 1 to 10: ");
+
+                    long numFact = scanner.nextLong();
+                    factorial(numFact);
+                }
+                else
+                {
+                    System.exit(0);
+                }
+
+            }
+            else
+            {
+
+                System.out.printf("You entered %d, that number is not within the range, please try again!!!%n", num);
+                System.out.print("Please enter a number ranging from 1 to 10: ");
+
+                long numFact = scanner.nextLong();
+                factorial(numFact);
+            }
+
+        }while(answer.equals("y"));
     }
 
 

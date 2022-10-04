@@ -13,9 +13,9 @@ public class MethodsExercises
         System.out.printf("Multiplying %d and %d will result in %d.%n",num1,num2,multiply(num1, num2));
         System.out.printf("Dividing %d and %d will result in %d.%n",num1, num2,divide(num1, num2));
         System.out.printf("When dividing %d and %d, the remainder is %d.%n", num1, num2, remainder(num1, num2));
-//        System.out.println();
-//        System.out.print("Enter a number between 1 and 10: ");
-//        int userInput = getInteger(1, 10);
+        System.out.println();
+        System.out.print("Enter a number between 1 and 10: ");
+        int userInput = getInteger(1, 10);
         System.out.println();
         Scanner scanner = new Scanner(System.in);
         //prompt the user to enter an integer from 1 to 10
@@ -115,10 +115,6 @@ public class MethodsExercises
 
                     long numFact = scanner.nextLong();
                     factorial(numFact);
-                }
-                else
-                {
-                    System.exit(0);
                 }
 
             }

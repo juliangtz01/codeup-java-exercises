@@ -40,5 +40,15 @@ public class Rectangle extends Quadrilateral implements Measurable
     {
         super.width = width;
     }
+
+    public double getArea()
+    {
+        return 0;
+    }
+
+    public double getPerimeter()
+    {
+        return 0;
+    }
 }
 

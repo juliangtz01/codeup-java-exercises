@@ -14,9 +14,5 @@ public class StudentTest
         System.out.println(john.getName());
 
         System.out.println(john.getGradeAverage());
-
-
-
-
     }
 }

@@ -40,4 +40,5 @@ public class Student
 
         return total / size;
     }
+
 }

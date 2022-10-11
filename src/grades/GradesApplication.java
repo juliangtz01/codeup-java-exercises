@@ -1,6 +1,7 @@
 package grades;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class GradesApplication
 {
@@ -36,13 +37,42 @@ public class GradesApplication
         students.put(amida.getName(), "amida2022");
 
 
-        System.out.printf("%s's average is %.0f, and github username is %s.%n",julian.getName(), julian.getGradeAverage(), students.get(julian.getName()));
+//        System.out.printf("%s's average is %.0f, and github username is %s.%n",julian.getName(), julian.getGradeAverage(), students.get(julian.getName()));
+//
+//        System.out.printf("%s's average is %.0f, and github username is %s.%n",greg.getName(), greg.getGradeAverage(), students.get(greg.getName()));
+//
+//        System.out.printf("%s's average is %.0f, and github username is %s.%n",mia.getName(), mia.getGradeAverage(), students.get(mia.getName()));
 
-        System.out.printf("%s's average is %.0f, and github username is %s.%n",greg.getName(), greg.getGradeAverage(), students.get(greg.getName()));
+        System.out.println("Welcome!\n");
+        System.out.println("Here are the GitHub usernames of our students:\n");
+        System.out.printf("|%s| |%s| |%s| |%s|%n", students.get(julian.getName()), students.get(greg.getName()), students.get(mia.getName()), students.get(amida.getName()));
 
-        System.out.printf("%s's average is %.0f, and github username is %s.%n",mia.getName(), mia.getGradeAverage(), students.get(mia.getName()));
 
 
+    }
 
+    void getStudentInfo(HashMap <String, String> student, Student name)
+    {
+        Scanner scanner = new Scanner(System.in);
+        Scanner answer = new Scanner(System.in);
+        String anotherStudent = "";
+        do
+        {
+            System.out.println("What student would you like to see more information on?");
+            String studentUsername = scanner.next();
+
+            if(!student.containsValue(studentUsername))
+            {
+                System.out.println("Sorry, no student found with that username of \"" + studentUsername + "\".");
+                System.out.println("Would you like to see another student?");
+                anotherStudent = answer.next();
+            }
+            else
+            {
+                System.out.printf("Name: %s - GitHub Username: %s%n Current Average: %.1f", student.get(studentUsername), student);
+            }
+
+
+        }while(anotherStudent.equalsIgnoreCase("y"));
     }
 }

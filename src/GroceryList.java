@@ -1,7 +1,6 @@
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class GroceryList
 {
@@ -35,10 +34,12 @@ public class GroceryList
 
     public static void groceryCategory()
     {
+        HashMap <Grocery, String> groceryList = new HashMap<>();
+        Scanner scanner = new Scanner(System.in);
         ArrayList <String> category = new ArrayList<>();
         category.add("Baby Items");
         category.add("Bread/Bakery");
-        category.add("Bakery");
+        category.add("Beverages");
         category.add("Canned/Jarred Goods");
         category.add("Dairy");
         category.add("Dry/Baking Goods");
@@ -55,13 +56,49 @@ public class GroceryList
         category.add("Pest Control");
         category.add("Others");
 
-        int count = 1;
+        String answer = "";
 
-        for(int x = 0; x < category.size(); x++)
+        do
         {
-            Collections.sort(category);
-            System.out.printf("%d. %s%n", count, category.get(x));
-            count++;
+            int count = 1;
+            for(int x = 0; x < category.size(); x++)
+            {
+
+                Collections.sort(category);
+                System.out.printf("%d. %s%n", count, category.get(x));
+                count++;
+            }
+
+            System.out.print("\nPlease select a category by selecting the number associated with the category: ");
+            int selection = scanner.nextInt();
+
+            scanner.nextLine();
+
+            System.out.print("\nPlease enter the name of the item: ");
+            String name = scanner.nextLine();
+
+            System.out.printf("%nPlease enter the quantity for %s: ", name);
+            int qty = scanner.nextInt();
+            Grocery item = new Grocery(name, qty);
+
+            groceryList.put(item, category.get(selection - 1));
+            System.out.println("\nIf you would like to add more items to the list please enter add, if you wish to finalize the list please enter final: ");
+            answer = scanner.next();
+
+        }while(answer.equalsIgnoreCase("add"));
+
+        System.out.println("\nBelow is your grocery list:\n");
+
+        //Creating a list of the original hashmap in order to sort
+        //the elements with sort() method
+        List<Map.Entry<Grocery, String>> sortedGroceryList = new ArrayList<>(groceryList.entrySet());
+
+        //Using Entry's comparingByValue() method for sorting in ascending order
+        sortedGroceryList.sort(Map.Entry.comparingByValue());
+
+        for(Entry <Grocery, String> entry : sortedGroceryList)
+        {
+            System.out.printf("%s - %s - quantity: %d%n", entry.getValue(), entry.getKey().getItem(), entry.getKey().getQuantity());
         }
     }
 

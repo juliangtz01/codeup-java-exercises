@@ -94,14 +94,23 @@ public class Input
 
     public double getDouble()
     {
-        return scanner.nextFloat();
+        try
+        {
+            return Double.parseDouble(getString("Please enter a numeric decimal: "));
+        }
+        catch (NumberFormatException e)
+        {
+            System.out.println("Sorry but the input you entered is not numeric decimal, please try again!!!");
+            return getDouble();
+        }
     }
 
     public static void main(String[] args)
     {
         int min = 0, max = 0;
         Input test = new Input();
-        System.out.print(test.getInt());
+        System.out.println(test.getInt());
+        System.out.println(test.getDouble());
 //        System.out.println();
 //        System.out.print("Please enter y or n: ");
 //        System.out.print(test.yesNo());
